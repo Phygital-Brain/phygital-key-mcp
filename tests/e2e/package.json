@@ -7,7 +7,7 @@
     "test": "node run.mjs && node browsers.mjs && node abuse.mjs"
   },
   "devDependencies": {
-    "@modelcontextprotocol/sdk": "1.32.1",
+    "@modelcontextprotocol/sdk": "1.32.2",
     "playwright": "1.64.1"
   }
 }
