@@ -1,6 +1,6 @@
 name: sync base
 
-# Every day, move to the latest commit of the shared base (Phygital-Key/phygital-key).
+# Every day, move to the latest commit of the shared base (Phygital-Brain/phygital-key).
 # Job 1 builds and tests it with read-only rights. Job 2 then saves ONLY Cargo.lock
 # and the files made from the base templates (never the release keys, never anything
 # else), and starts the full CI on the result (every OS, the secure install, the

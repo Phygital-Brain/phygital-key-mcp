@@ -8,10 +8,10 @@ Phygital Key MCP is a normal MCP server, so any app that speaks MCP can use it. 
 
 | | stdio | HTTP |
 |---|---|---|
-| Who starts the gate | Your AI app runs `phygital-key-mcp stdio` | You (`phygital-key-mcp serve`), the [secure install](https://github.com/Phygital-Key/phygital-key/blob/main/docs/secure-install.md), the [container](../README.md#install), or `phygital-key-mcp demo` |
+| Who starts the gate | Your AI app runs `phygital-key-mcp stdio` | You (`phygital-key-mcp serve`), the [secure install](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/secure-install.md), the [container](../README.md#install), or `phygital-key-mcp demo` |
 | What the app needs | A command and its arguments | A URL and an `Authorization` header |
 | Access token | None: only the app that started the gate can talk to it | Required: `Authorization: Bearer <token>` |
-| Approval page | `http://localhost:7468`, while the app runs | `http://localhost:7468` (or your [own server](https://github.com/Phygital-Key/phygital-key/blob/main/docs/own-server.md)'s https address) |
+| Approval page | `http://localhost:7468`, while the app runs | `http://localhost:7468` (or your [own server](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/own-server.md)'s https address) |
 | Several AI apps at once | No: each app would start its own gate on the same port | Yes: every app connects to the one gate |
 | Use it for | Trying it on your own computer | The secure install, the demo, a shared or remote gate |
 
@@ -87,7 +87,7 @@ Once the app has started the gate, add your key from your own terminal:
 phygital-key-mcp enroll
 ```
 
-The link it prints works once, for 10 minutes. Use the same `--home` (or `PHYGITAL_KEY_MCP_HOME`) and `--port` as the app's command, or the gate will not know the link. Details: [keys and devices](https://github.com/Phygital-Key/phygital-key/blob/main/docs/keys-and-devices.md).
+The link it prints works once, for 10 minutes. Use the same `--home` (or `PHYGITAL_KEY_MCP_HOME`) and `--port` as the app's command, or the gate will not know the link. Details: [keys and devices](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/keys-and-devices.md).
 
 ## HTTP: the app connects to a URL
 
@@ -164,11 +164,11 @@ The word `Bearer` may be written in any case. `--no-token` turns the token off; 
 
 ### Rotate the token
 
-Stop the gate, delete `<home>/access-token`, start the gate again (it makes a new one), run `phygital-key-mcp token`, and update every AI app with the new line. With the secure install the file is `access-token` in the gate's data folder (the paths are on [secure install](https://github.com/Phygital-Key/phygital-key/blob/main/docs/secure-install.md)): delete it with `sudo`, then run the locked `install-service` again, which restarts the gate.
+Stop the gate, delete `<home>/access-token`, start the gate again (it makes a new one), run `phygital-key-mcp token`, and update every AI app with the new line. With the secure install the file is `access-token` in the gate's data folder (the paths are on [secure install](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/secure-install.md)): delete it with `sudo`, then run the locked `install-service` again, which restarts the gate.
 
 ## How the approval page reaches you
 
-When the AI calls `request_approval`, the gate asks the AI app to open the approval page for you (an MCP feature called URL [elicitation](https://github.com/Phygital-Key/phygital-key/blob/main/docs/glossary.md)), with the message `A person must approve this request with their key. Open the page to review the exact request and decide.` If the app supports it, you are offered the page directly, and the tool result tells the AI `The approval page was offered to the person. Call get_approval to wait for their decision.` If it does not, the tool result tells the AI: `Show the person approve_url and ask them to open it and decide. Then call get_approval.` The AI then gives you the link. Either way, "opening the page" is never a yes. Only your key's signature on the page is.
+When the AI calls `request_approval`, the gate asks the AI app to open the approval page for you (an MCP feature called URL [elicitation](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/glossary.md)), with the message `A person must approve this request with their key. Open the page to review the exact request and decide.` If the app supports it, you are offered the page directly, and the tool result tells the AI `The approval page was offered to the person. Call get_approval to wait for their decision.` If it does not, the tool result tells the AI: `Show the person approve_url and ask them to open it and decide. Then call get_approval.` The AI then gives you the link. Either way, "opening the page" is never a yes. Only your key's signature on the page is.
 
 ## Check that it works
 
@@ -185,11 +185,11 @@ What you should see:
 
 The gate never contacts the audience, so this test works whether or not the demo is running. Nothing is sent to anyone. If you also run `phygital-key-mcp demo` (HTTP), the AI can then post the approval to `http://localhost:7469/send_message` and get back `Sent (demo: nothing real happened)`.
 
-If the tool answers ``No key is enrolled yet. Ask the person to run `phygital-key-mcp enroll` and add their passkey first.``, add your key first. Other messages are in [troubleshooting](https://github.com/Phygital-Key/phygital-key/blob/main/docs/troubleshooting.md).
+If the tool answers ``No key is enrolled yet. Ask the person to run `phygital-key-mcp enroll` and add their passkey first.``, add your key first. Other messages are in [troubleshooting](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/troubleshooting.md).
 
 ## Next
 
 - [Tools](tools.md): every tool, argument and result
-- [Approving](https://github.com/Phygital-Key/phygital-key/blob/main/docs/approving.md): what each part of the page means
-- [Secure install](https://github.com/Phygital-Key/phygital-key/blob/main/docs/secure-install.md): run the gate where the AI cannot change it
-- [Troubleshooting](https://github.com/Phygital-Key/phygital-key/blob/main/docs/troubleshooting.md)
+- [Approving](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/approving.md): what each part of the page means
+- [Secure install](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/secure-install.md): run the gate where the AI cannot change it
+- [Troubleshooting](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/troubleshooting.md)

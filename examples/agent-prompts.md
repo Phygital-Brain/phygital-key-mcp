@@ -78,4 +78,4 @@ The gate sends its own instructions to every MCP client when it connects. In sho
 - [Rules for AI agents](../docs/agents.md)
 - [MCP tools](../docs/tools.md)
 - [Things to ask your AI](../docs/examples.md)
-- [All examples](https://github.com/Phygital-Key/phygital-key/blob/main/examples/README.md): runnable services that check approvals
+- [All examples](https://github.com/Phygital-Brain/phygital-key/blob/main/examples/README.md): runnable services that check approvals

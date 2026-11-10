@@ -48,7 +48,7 @@ jobs:
           fi
       # A signed record (GitHub build provenance) that this workflow built these
       # exact files from this tag's commit. Anyone can check it with
-      # `gh attestation verify <file> --repo Phygital-Key/phygital-key-mcp`.
+      # `gh attestation verify <file> --repo Phygital-Brain/phygital-key-mcp`.
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
           subject-path: |
@@ -192,7 +192,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write       # push ghcr.io/phygital-key/phygital-key-mcp
+      packages: write       # push ghcr.io/phygital-brain/phygital-key-mcp
       id-token: write       # build provenance for the image
       attestations: write
     steps:
@@ -231,10 +231,10 @@ jobs:
           push: true
           provenance: false
           tags: |
-            ghcr.io/phygital-key/phygital-key-mcp:${{ github.ref_name }}
-            ghcr.io/phygital-key/phygital-key-mcp:latest
+            ghcr.io/phygital-brain/phygital-key-mcp:${{ github.ref_name }}
+            ghcr.io/phygital-brain/phygital-key-mcp:latest
       - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
-          subject-name: ghcr.io/phygital-key/phygital-key-mcp
+          subject-name: ghcr.io/phygital-brain/phygital-key-mcp
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true

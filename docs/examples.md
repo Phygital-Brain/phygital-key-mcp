@@ -62,7 +62,7 @@ What happens: a `dns_change`, `firewall_rule` or `admin` request at `high`. Chec
 - *Ask me for a standing approval to post the daily status message to the team channel, at most 30 times in 30 days.*
 - *Do I really need a standing approval for this? Ask me each time instead.*
 
-A standing approval is always level `high`, lasts at most 30 days and allows at most 1000 uses. Its limits are exact values, integer ranges with both a minimum and a maximum, or a short list of allowed strings (up to 20). See [standing approvals](https://github.com/Phygital-Key/phygital-key/blob/main/docs/standing-approvals.md).
+A standing approval is always level `high`, lasts at most 30 days and allows at most 1000 uses. Its limits are exact values, integer ranges with both a minimum and a maximum, or a short list of allowed strings (up to 20). See [standing approvals](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/standing-approvals.md).
 
 <img src="images/standing-dark.png" alt="The approval page for a standing approval: payments to ACME Ltd in EUR, amount_cents from 1 to 2000, up to 5 times, with the end date and Approve and Deny buttons" width="320">
 
@@ -72,7 +72,7 @@ A standing approval is always level `high`, lasts at most 30 days and allows at 
 - *Revoke the standing approval for ACME Ltd payments.*
 - *I changed my mind about the deploy. Withdraw the request.*
 
-What happens: the AI calls `cancel_approval`. A request still waiting is withdrawn. For a standing approval, the gate stops new uses at once and hands the AI a link (`sign_url`) for you to sign a revocation (one more touch), so services refuse it too (`REVOKED`). You can also press **Revoke now** on the standing approval's page yourself. See [revocations](https://github.com/Phygital-Key/phygital-key/blob/main/docs/revocations.md).
+What happens: the AI calls `cancel_approval`. A request still waiting is withdrawn. For a standing approval, the gate stops new uses at once and hands the AI a link (`sign_url`) for you to sign a revocation (one more touch), so services refuse it too (`REVOKED`). You can also press **Revoke now** on the standing approval's page yourself. See [revocations](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/revocations.md).
 
 ## Check keys and records
 
@@ -83,7 +83,7 @@ The gate's MCP tools cannot list or change keys: key changes always need your ow
 - *Run `phygital-key-mcp audit-check` and tell me if the audit log is intact.*
 - *Check this receipt from the deploy service with `phygital-key-mcp receipt-check`.*
 
-With the [secure install](https://github.com/Phygital-Key/phygital-key/blob/main/docs/secure-install.md), the data folder belongs to the gate's own user, so the commands that read it run through `phygital-key-mcp-admin keys` and `phygital-key-mcp-admin audit-check`, which ask for your administrator password. That is on purpose: the AI cannot read the gate's data without you. To check the history, save the output of `phygital-key-mcp-admin keys` to a file and run `phygital-key-mcp keys --check <fingerprint> --file <that file> --signed-on http://localhost:7468`. Adding or removing a key is something you do yourself ([keys and devices](https://github.com/Phygital-Key/phygital-key/blob/main/docs/keys-and-devices.md)).
+With the [secure install](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/secure-install.md), the data folder belongs to the gate's own user, so the commands that read it run through `phygital-key-mcp-admin keys` and `phygital-key-mcp-admin audit-check`, which ask for your administrator password. That is on purpose: the AI cannot read the gate's data without you. To check the history, save the output of `phygital-key-mcp-admin keys` to a file and run `phygital-key-mcp keys --check <fingerprint> --file <that file> --signed-on http://localhost:7468`. Adding or removing a key is something you do yourself ([keys and devices](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/keys-and-devices.md)).
 
 ## Things the AI should refuse
 
@@ -96,7 +96,7 @@ Ask these to see that the rules hold. A well-behaved agent says no, and the serv
 
 ## Next
 
-- [Use cases](https://github.com/Phygital-Key/phygital-key/blob/main/docs/use-cases.md)
-- [Approving on the page](https://github.com/Phygital-Key/phygital-key/blob/main/docs/approving.md)
+- [Use cases](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/use-cases.md)
+- [Approving on the page](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/approving.md)
 - [Agent prompts](../examples/agent-prompts.md)
-- [Troubleshooting](https://github.com/Phygital-Key/phygital-key/blob/main/docs/troubleshooting.md)
+- [Troubleshooting](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/troubleshooting.md)

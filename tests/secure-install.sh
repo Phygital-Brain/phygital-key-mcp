@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034 # every script carries the whole PRODUCT block; not all use every value
 # CI check for the secure install (needs password-less sudo, as on CI runners).
 # Generated for one product (the PRODUCT block) from the template in
-# Phygital-Key/phygital-key, crates/phygital-key-gate/assets.
+# Phygital-Brain/phygital-key, crates/phygital-key-gate/assets.
 #   tests/secure-install.sh path/to/built/program
 set -euo pipefail
 BUILT="$1"
@@ -10,7 +10,7 @@ BUILT="$1"
 P_NAME="Phygital Key MCP"
 P_BIN=phygital-key-mcp
 P_ID=mcp
-P_REPO=Phygital-Key/phygital-key-mcp
+P_REPO=Phygital-Brain/phygital-key-mcp
 P_PORT=7468
 P_VERSION=v0.6.2
 P_PATH=/mcp

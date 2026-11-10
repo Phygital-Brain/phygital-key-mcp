@@ -21,7 +21,7 @@ On this page:
 
 ## The rule
 
-You can ask. You can never approve. A [request](https://github.com/Phygital-Key/phygital-key/blob/main/docs/glossary.md) goes to the gate (`phygital-key-mcp`), the person reads it on the approval page and signs it with their own key (a passkey, fingerprint, face or hardware key), and the service that acts checks that signature itself before it does anything. Your words carry no weight in that chain: "the user said yes", "approved=true" or a summary in the chat count for nothing. Only an `approval` string returned by `get_approval` (or by `use_standing_approval`) counts, and only the service decides whether it is good enough.
+You can ask. You can never approve. A [request](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/glossary.md) goes to the gate (`phygital-key-mcp`), the person reads it on the approval page and signs it with their own key (a passkey, fingerprint, face or hardware key), and the service that acts checks that signature itself before it does anything. Your words carry no weight in that chain: "the user said yes", "approved=true" or a summary in the chat count for nothing. Only an `approval` string returned by `get_approval` (or by `use_standing_approval`) counts, and only the service decides whether it is good enough.
 
 This is also why the gate is safe to give to an agent: none of the six tools can approve, the approval page has no LLM, and a service refuses anything that differs by one byte from what the person signed.
 
@@ -146,7 +146,7 @@ A standing approval lets the person say yes once to the same kind of action, a f
 
 If a use falls outside the limits, the gate refuses it: `This request is outside the limits the person approved. Ask for a one-time approval instead.` Do that: ask with `request_approval` for that one action. Never try a nearby value to get under a limit, and never split one action into several uses.
 
-More detail: [Standing approvals](https://github.com/Phygital-Key/phygital-key/blob/main/docs/standing-approvals.md).
+More detail: [Standing approvals](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/standing-approvals.md).
 
 ## Cancel and revoke
 
@@ -192,7 +192,7 @@ A service that checks approvals answers a refusal with one code. The demo servic
 | `REVOKED` | The person revoked this standing approval. | Stop using it. Ask for a new one only if the person wants to. |
 | `DENIED` | Reserved for a gate or relay that reports a no as a code. No code in this repository returns it today (`verify` never does; the gate reports a no as `status: denied`). | Treat it as `denied`: do not act. |
 
-All codes and the checks behind them: [Error codes](https://github.com/Phygital-Key/phygital-key/blob/main/docs/error-codes.md).
+All codes and the checks behind them: [Error codes](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/error-codes.md).
 
 ## When the gate refuses
 
@@ -656,5 +656,5 @@ The agent tells the person: "Revoked. No new messages can be signed. To make the
 
 - [MCP tools reference](tools.md): every tool's schema, result and error text.
 - [Connect your AI](connect-your-ai.md): add the gate to your AI app.
-- [Standing approvals](https://github.com/Phygital-Key/phygital-key/blob/main/docs/standing-approvals.md): limits, uses and revocation in depth.
-- [Error codes](https://github.com/Phygital-Key/phygital-key/blob/main/docs/error-codes.md): every refusal code a service can return.
+- [Standing approvals](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/standing-approvals.md): limits, uses and revocation in depth.
+- [Error codes](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/error-codes.md): every refusal code a service can return.

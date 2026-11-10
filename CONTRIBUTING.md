@@ -7,7 +7,7 @@ Thank you for helping. Phygital Key MCP is free and open source under [Apache-2.
 | Change | Repository |
 |---|---|
 | The MCP tools, their texts, the MCP endpoint, the stdio mode, these docs | Here |
-| The approval page, keys, standing approvals, receipts, the audit log, the commands, the secure install, updates, the verifier, the spec | The base, [Phygital-Key/phygital-key](https://github.com/Phygital-Key/phygital-key) ([its contributing guide](https://github.com/Phygital-Key/phygital-key/blob/main/CONTRIBUTING.md)) |
+| The approval page, keys, standing approvals, receipts, the audit log, the commands, the secure install, updates, the verifier, the spec | The base, [Phygital-Brain/phygital-key](https://github.com/Phygital-Brain/phygital-key) ([its contributing guide](https://github.com/Phygital-Brain/phygital-key/blob/main/CONTRIBUTING.md)) |
 | `install.sh`, `install-service.sh`, `tests/secure-install.sh`, `scripts/*.sh` | The base's templates: these files are generated, never edited here |
 
 Read [AGENTS.md](AGENTS.md) first: the layout, the rules that must never break, and how the generated files and the daily sync work.
