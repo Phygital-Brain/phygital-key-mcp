@@ -18,7 +18,7 @@ static PRODUCT: Product = Product {
     bin: "phygital-key-mcp",
     id: "mcp",
     version: env!("CARGO_PKG_VERSION"),
-    repo: "Phygital-Key/phygital-key-mcp",
+    repo: "Phygital-Brain/phygital-key-mcp",
     port: 7468,
     about: "A person approves exact AI actions with a passkey or hardware key. MCP edition.",
     release_keys: include_str!("../release-keys.pem"),

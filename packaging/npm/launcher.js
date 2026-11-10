@@ -16,7 +16,7 @@ const path = join(__dirname, "..", "dist", target, exe);
 if (!existsSync(path)) {
   console.error(
     `${BIN}: no build for ${target} in this package.\n` +
-      `Other ways to install: https://github.com/Phygital-Key/${BIN}#install`
+      `Other ways to install: https://github.com/Phygital-Brain/${BIN}#install`
   );
   process.exit(1);
 }

@@ -6,7 +6,7 @@ Add yourself in your pull request, or ask in an issue and the maintainer adds yo
 
 | Who | What they did |
 |---|---|
-| [@Phygital-Key](https://github.com/Phygital-Key) | Created and maintains the project |
+| [@Phygital-Key](https://github.com/Phygital-Brain) | Created and maintains the project |
 
 Kinds of contribution: code, bug reports, ideas, docs, translations, design, testing, reviews, answering questions, security reports, tutorials, talks.
 

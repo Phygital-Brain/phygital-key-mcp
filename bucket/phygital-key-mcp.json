@@ -1,11 +1,11 @@
 {
     "version": "0.6.2",
     "description": "Phygital Key MCP: approve exact AI actions with a passkey or hardware key",
-    "homepage": "https://github.com/Phygital-Key/phygital-key-mcp",
+    "homepage": "https://github.com/Phygital-Brain/phygital-key-mcp",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Phygital-Key/phygital-key-mcp/releases/download/v0.6.2/phygital-key-mcp-v0.6.2-x86_64-pc-windows-msvc.zip",
+            "url": "https://github.com/Phygital-Brain/phygital-key-mcp/releases/download/v0.6.2/phygital-key-mcp-v0.6.2-x86_64-pc-windows-msvc.zip",
             "hash": "300973e213ea8b701888dc627b30a7255beb237e9b165889b4091cb332727fae",
             "extract_dir": "phygital-key-mcp-v0.6.2-x86_64-pc-windows-msvc"
         }
@@ -15,7 +15,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Phygital-Key/phygital-key-mcp/releases/download/v$version/phygital-key-mcp-v$version-x86_64-pc-windows-msvc.zip",
+                "url": "https://github.com/Phygital-Brain/phygital-key-mcp/releases/download/v$version/phygital-key-mcp-v$version-x86_64-pc-windows-msvc.zip",
                 "extract_dir": "phygital-key-mcp-v$version-x86_64-pc-windows-msvc"
             }
         },

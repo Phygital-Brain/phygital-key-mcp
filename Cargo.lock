@@ -293,9 +293,9 @@ dependencies = [
 
 [[package]]
 name = "crypto-bigint"
-version = "0.7.5"
+version = "0.7.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1a52aa3fcda4e6302a9f48734f234d35d4721b96f8fe07d073f07ce9df4f0271"
+checksum = "914c195c4d7fbc5ed7f88d14cbf85914d5c664967658d43404b263913a477e82"
 dependencies = [
  "cpubits",
  "ctutils",
@@ -320,9 +320,9 @@ dependencies = [
 
 [[package]]
 name = "ctutils"
-version = "0.4.3"
+version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03bb0e1cc970d482d121d9a1744999169b69a07470b3d644a7894e53fcaf4574"
+checksum = "261af4dc7a06ea8a527a8717d8cbba3417530d6ea14e1edb3de6b67806be474f"
 dependencies = [
  "cmov",
  "subtle",
@@ -1024,7 +1024,7 @@ checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
 [[package]]
 name = "phygital-key-gate"
 version = "0.6.0"
-source = "git+https://github.com/Phygital-Key/phygital-key?branch=main#6304ecaeeeb95fa0cb92eeded23b128d526c693e"
+source = "git+https://github.com/Phygital-Brain/phygital-key?branch=main#c2b297ce85631cb889dd7438a2c08e5d7b16e182"
 dependencies = [
  "axum",
  "base64",
@@ -1062,7 +1062,7 @@ dependencies = [
 [[package]]
 name = "phygital-key-verify"
 version = "0.6.0"
-source = "git+https://github.com/Phygital-Key/phygital-key?branch=main#6304ecaeeeb95fa0cb92eeded23b128d526c693e"
+source = "git+https://github.com/Phygital-Brain/phygital-key?branch=main#c2b297ce85631cb889dd7438a2c08e5d7b16e182"
 dependencies = [
  "base64",
  "p256",

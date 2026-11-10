@@ -1,6 +1,6 @@
 # Testing
 
-How Phygital Key MCP is tested: the 124 end-to-end checks, the browser and abuse checks, the secure install test, the container check, the check that the generated files match the base, every CI job and the daily sync. It is for contributors and for anyone who wants to see what holds each guarantee. The engine's own tests (shared test vectors, Wycheproof, the SimpleWebAuthn cross-check, property tests, fuzzing, mutation testing, the JavaScript checker, the installer's release-list check, supply chain) run in the base: see [testing in the base](https://github.com/Phygital-Key/phygital-key/blob/main/docs/testing.md).
+How Phygital Key MCP is tested: the 124 end-to-end checks, the browser and abuse checks, the secure install test, the container check, the check that the generated files match the base, every CI job and the daily sync. It is for contributors and for anyone who wants to see what holds each guarantee. The engine's own tests (shared test vectors, Wycheproof, the SimpleWebAuthn cross-check, property tests, fuzzing, mutation testing, the JavaScript checker, the installer's release-list check, supply chain) run in the base: see [testing in the base](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/testing.md).
 
 **On this page:** [at a glance](#at-a-glance) · [end-to-end checks](#end-to-end-and-red-team-checks) · [Firefox and WebKit](#firefox-and-webkit) · [abuse](#abuse-checks) · [secure install](#secure-install-test) · [container](#container-check) · [generated files](#generated-files-check) · [CI](#ci) · [the sync](#the-daily-sync)
 
@@ -100,7 +100,7 @@ Its checks, in order (36 on Linux, 32 on macOS):
 - [x] `--no-auto-update` removes the job, the choice is kept on later installs, and `--auto-update` turns it back on.
 - [x] Uninstall stops it and keeps the keys; purge removes everything; uninstall removes the update job.
 
-What the secure install does and refuses: [secure install](https://github.com/Phygital-Key/phygital-key/blob/main/docs/secure-install.md).
+What the secure install does and refuses: [secure install](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/secure-install.md).
 
 ## Container check
 
@@ -111,7 +111,7 @@ The CI job `container image (build and start)` builds the image from `packaging/
 3. checks that the image user is `65532:65532`;
 4. runs `phygital-key-mcp enroll` inside and checks that it prints a `http://localhost:7468/enroll#token=` link.
 
-The release workflow builds the published image `ghcr.io/phygital-key/phygital-key-mcp` for `linux/amd64` and `linux/arm64` from the signed release's own Linux archives.
+The release workflow builds the published image `ghcr.io/phygital-brain/phygital-key-mcp` for `linux/amd64` and `linux/arm64` from the signed release's own Linux archives.
 
 ## Generated files check
 
@@ -154,6 +154,6 @@ A base change that breaks this product never lands here: the job stops before th
 ## Next
 
 - [AGENTS.md](../AGENTS.md): layout, generated files and rules
-- [Testing in the base](https://github.com/Phygital-Key/phygital-key/blob/main/docs/testing.md): vectors, property tests, fuzzing, mutation testing
-- [Threat model](https://github.com/Phygital-Key/phygital-key/blob/main/docs/threat-model.md)
+- [Testing in the base](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/testing.md): vectors, property tests, fuzzing, mutation testing
+- [Threat model](https://github.com/Phygital-Brain/phygital-key/blob/main/docs/threat-model.md)
 - [Tools](tools.md)

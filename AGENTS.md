@@ -7,11 +7,11 @@ Notes for AI coding agents (Claude Code, Codex, Cursor, Copilot and others) and 
 
 ## What this repository is
 
-Phygital Key MCP is one product built on the shared base [Phygital-Key/phygital-key](https://github.com/Phygital-Key/phygital-key). The base holds the engine: the verifier (`phygital-key-verify`), the gate library (`phygital-key-gate`: approval page, keys, standing approvals, receipts, audit log, secure install, signed updates and the shared commands), the spec, the test vectors and the shared docs. The base publishes no programs and no releases.
+Phygital Key MCP is one product built on the shared base [Phygital-Brain/phygital-key](https://github.com/Phygital-Brain/phygital-key). The base holds the engine: the verifier (`phygital-key-verify`), the gate library (`phygital-key-gate`: approval page, keys, standing approvals, receipts, audit log, secure install, signed updates and the shared commands), the spec, the test vectors and the shared docs. The base publishes no programs and no releases.
 
 This repository adds only what is MCP:
 
-- the product's identity (name `Phygital Key MCP`, program `phygital-key-mcp`, id `mcp`, port 7468, repository `Phygital-Key/phygital-key-mcp`, its pinned release keys), as a `Product` in `src/main.rs`;
+- the product's identity (name `Phygital Key MCP`, program `phygital-key-mcp`, id `mcp`, port 7468, repository `Phygital-Brain/phygital-key-mcp`, its pinned release keys), as a `Product` in `src/main.rs`;
 - the MCP adapter (the base's `Adapter` trait): Streamable HTTP at `/mcp`, the stdio mode, and the connect hints;
 - the six MCP tools and the server instructions (`src/mcp.rs`);
 - the end-to-end tests, the CI, the release workflow, the container, and the MCP docs.
@@ -34,7 +34,7 @@ tests/e2e/run.mjs                124 end-to-end and red-team checks
 tests/e2e/browsers.mjs           the approval page in Firefox and WebKit (16 checks)
 tests/e2e/abuse.mjs              floods, huge and slow requests, idle connections (16 checks)
 tests/e2e/package.json, package-lock.json   pinned MCP SDK and Playwright
-packaging/container/Dockerfile   ghcr.io/phygital-key/phygital-key-mcp: distroless cc-debian12:nonroot (pinned by digest), uid 65532, data in /data
+packaging/container/Dockerfile   ghcr.io/phygital-brain/phygital-key-mcp: distroless cc-debian12:nonroot (pinned by digest), uid 65532, data in /data
 packaging/npm/                   build.sh makes the npm package @phygital-key/mcp from a release's archives (a launcher and the program for each target), publish.sh publishes it
 .github/workflows/ci.yml         CI on every push to main, every pull request, and when the sync starts it
 .github/workflows/release.yml    on a v* tag: test, build 5 targets, attest, sign release.txt and release2.txt (P-256, and ML-DSA-65 once pinned), publish, then npm and the container
@@ -71,7 +71,7 @@ The CI job `files made from the base are up to date` runs exactly that and fails
 
 ## Changing shared behaviour
 
-Anything that is not MCP lives in the base: the approval page, enrollment, keys and key history, standing approvals, revocations, receipts, the audit log, the HTTP guard (host, `Origin`, token), the commands `serve`, `demo`, `enroll`, `token`, `keys`, `verify`, `install-service`, `update` and the rest, the secure install, the signed updates, the verifier and the spec. Change those in [Phygital-Key/phygital-key](https://github.com/Phygital-Key/phygital-key), with its tests and vectors, following its [AGENTS.md](https://github.com/Phygital-Key/phygital-key/blob/main/AGENTS.md). Do not copy base code into this repository to change it here.
+Anything that is not MCP lives in the base: the approval page, enrollment, keys and key history, standing approvals, revocations, receipts, the audit log, the HTTP guard (host, `Origin`, token), the commands `serve`, `demo`, `enroll`, `token`, `keys`, `verify`, `install-service`, `update` and the rest, the secure install, the signed updates, the verifier and the spec. Change those in [Phygital-Brain/phygital-key](https://github.com/Phygital-Brain/phygital-key), with its tests and vectors, following its [AGENTS.md](https://github.com/Phygital-Brain/phygital-key/blob/main/AGENTS.md). Do not copy base code into this repository to change it here.
 
 A change in the base reaches this product through the sync (next section), or at once if you run `cargo update -p phygital-key-gate -p phygital-key-verify` here.
 
@@ -97,7 +97,7 @@ A failing base change is never pushed here: the job stops before the commit.
 7. **No new dependencies without asking.** Open an issue first. Licences: Apache-2.0, MIT, BSD or similar.
 8. **The release signing key lives only in the GitHub environment secret** `RELEASE_SIGNING_KEY` of the environment `release`, which only a run from a `v*` tag gets. Never put a private key in the repository, a workflow, an issue, a test or a log. Never run `scripts/release-key.sh` (owner only, in the owner's own terminal), never approve a release run, and never push a `v*` tag unless the owner asked: a pushed tag signs and publishes a release.
 9. **Keep the credit.** `NOTICE` keeps the line "Created by Phygital-Key". Never write any real person's name anywhere, and add no AI attribution lines to docs, commits or release notes.
-10. **Docs in plain words, no em dashes.** Shared topics are documented only in the base; link to them with `https://github.com/Phygital-Key/phygital-key/blob/main/docs/<page>.md`. Relative links here must resolve.
+10. **Docs in plain words, no em dashes.** Shared topics are documented only in the base; link to them with `https://github.com/Phygital-Brain/phygital-key/blob/main/docs/<page>.md`. Relative links here must resolve.
 
 Changing an MCP tool (its name, arguments, results, `next` texts or error texts) also means: update `INSTRUCTIONS` in `src/mcp.rs` if the flow changes, [docs/tools.md](docs/tools.md), [docs/agents.md](docs/agents.md) and [examples/agent-prompts.md](examples/agent-prompts.md), and the end-to-end checks `MCP lists exactly 6 tools, none can approve` and `MCP server names itself phygital-key-mcp with its version`.
 
@@ -127,5 +127,5 @@ Every CI job, the container check and the sync: [docs/testing.md](docs/testing.m
 
 - [CONTRIBUTING.md](CONTRIBUTING.md): ground rules and checks.
 - [docs/testing.md](docs/testing.md): every test and CI job.
-- [The base's AGENTS.md](https://github.com/Phygital-Key/phygital-key/blob/main/AGENTS.md): the engine, the spec and the vectors.
+- [The base's AGENTS.md](https://github.com/Phygital-Brain/phygital-key/blob/main/AGENTS.md): the engine, the spec and the vectors.
 - [SECURITY.md](SECURITY.md): report a security problem privately.

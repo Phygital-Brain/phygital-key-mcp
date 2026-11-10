@@ -1,9 +1,9 @@
-# Phygital Key MCP as a container (ghcr.io/phygital-key/phygital-key-mcp).
+# Phygital Key MCP as a container (ghcr.io/phygital-brain/phygital-key-mcp).
 # Built by .github/workflows/release.yml from the same Linux binaries the signed
 # release contains (their SHA-256 is in that release's signed release.txt).
 #
 #   docker run -d --name phygital-key-mcp -p 127.0.0.1:7468:7468 \
-#     -v phygital-key-mcp:/data ghcr.io/phygital-key/phygital-key-mcp:latest
+#     -v phygital-key-mcp:/data ghcr.io/phygital-brain/phygital-key-mcp:latest
 #   docker exec -it phygital-key-mcp phygital-key-mcp enroll
 #   docker exec -it phygital-key-mcp phygital-key-mcp token
 #
@@ -13,7 +13,7 @@ FROM gcr.io/distroless/cc-debian12:nonroot@sha256:9dac0a79194e45a7da0158a9c6da57
 ARG TARGETARCH
 LABEL org.opencontainers.image.title="Phygital Key MCP" \
       org.opencontainers.image.description="A person approves exact AI actions with a passkey; any service checks the signed yes offline." \
-      org.opencontainers.image.source="https://github.com/Phygital-Key/phygital-key-mcp" \
+      org.opencontainers.image.source="https://github.com/Phygital-Brain/phygital-key-mcp" \
       org.opencontainers.image.licenses="Apache-2.0"
 COPY --chmod=0755 bin/${TARGETARCH}/phygital-key-mcp /usr/local/bin/phygital-key-mcp
 COPY --chown=65532:65532 data /data
